@@ -56,18 +56,10 @@ protected:
         if(GetMouse(0).bPressed)
         {
             std::cout << "Chance: " << dist.chance << std::endl;
-
             Clear(olc::BLACK);
             for(unsigned int x = 0; x < ScreenWidth(); x++)
-            {
                 for(unsigned int y = 0; y < ScreenHeight(); y++)
-                {
-                    if(dist())
-                        Draw(x, y, olc::WHITE);
-                    else
-                        Draw(x, y, olc::BLACK);
-                }
-            }
+                    Draw(x, y, dist() ? olc::WHITE : olc::BLACK);
         }
 
 
